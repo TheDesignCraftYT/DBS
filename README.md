@@ -107,7 +107,7 @@ If you haven't yet created a `settings.xml` file or you haven't yet added your G
 
 ```xml
 <dependency>
-  <groupId>de.thedesigncraft.discord.botstuff</groupId>
+  <groupId>de.thedesigncraft.discord</groupId>
   <artifactId>dbs</artifactId>
   <version>VERSION</version>
 </dependency>
@@ -148,7 +148,7 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation 'de.thedesigncraft.discord.botstuff.dbs:dbs:VERSION'
+    implementation 'de.thedesigncraft.discord.dbs:dbs:VERSION'
 }
 ```
 
@@ -168,6 +168,6 @@ repositories {
 
 ```gradle
 dependencies {
-    implementation("de.thedesigncraft.discord.botstuff.dbs:dbs:VERSION")
+    implementation("de.thedesigncraft.discord.dbs:dbs:VERSION")
 }
 ```
