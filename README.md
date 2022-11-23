@@ -91,7 +91,7 @@ You can activate them in your Main using `setActivatedStuffPackages()` or `addAc
 [ ![stable-releases-shield][] ](https://github.com/TheDesignCraftYT/DBS/releases/latest)
 [ ![snapshots-shield][] ](https://github.com/TheDesignCraftYT/DBS/releases/)
 
-Be sure to replace the **VERSION** key below with the one of the versions shown above!
+Be sure to replace the **`VERSION`** key below with the one of the versions shown above!
 
 ### Maven
 
