@@ -1,9 +1,11 @@
-[releases]: https://img.shields.io/github/v/release/TheDesignCraftYT/DBS?include_prereleases&label=Download
-[download]: https://github.com/TheDesignCraftYT/DBS/releases/latest
+[releases-shield]: https://img.shields.io/github/v/release/TheDesignCraftYT/DBS?include_prereleases&label=Download
+[download]: #download
 [discord-invite]: https://discord.gg/mYKK4BwGxe
 [license]: https://github.com/TheDesignCraftYT/DBS/tree/master/LICENSE
 [discord-shield]: https://discord.com/api/guilds/1007268691689341030/widget.png
 [license-shield]: https://img.shields.io/badge/License-Apache%202.0-white.svg
+[stable-releases-shield]: https://img.shields.io/github/v/release/TheDesignCraftYT/DBS?label=Latest%20Stable
+[snapshots-shield]: https://img.shields.io/github/v/release/TheDesignCraftYT/DBS?include_prereleases&label=Latest%20Snapshot
 
 <img align="right" src="" height="200" width="200">
 
@@ -83,3 +85,89 @@ You can activate them in your Main using `setActivatedStuffPackages()` or `addAc
 - DevCommands ([`devCommands`](https://github.com/TheDesignCraftYT/DBS/tree/main/src/main/java/de/thedesigncraft/discord/botstuff/devCommands))
 - InteractionErrorDetection ([`interactionErrorDetection`](https://github.com/TheDesignCraftYT/DBS/tree/main/src/main/java/de/thedesigncraft/discord/botstuff/interactionErrorDetection))
 - SomeMoreCommands ([`someMoreCommands`](https://github.com/TheDesignCraftYT/DBS/tree/main/src/main/java/de/thedesigncraft/discord/botstuff/someMoreCommands))
+
+## Download
+
+[ ![stable-releases-shield][] ](https://github.com/TheDesignCraftYT/DBS/releases/latest)
+[ ![snapshots-shield][] ](https://github.com/TheDesignCraftYT/DBS/releases/)
+
+Be sure to replace the **VERSION** key below with the one of the versions shown above!
+
+### Maven
+
+If you haven't yet created a `settings.xml` file or you haven't yet added your GitHub-Authentication in the `settings.xml` file, take a look at [Preparing your `settings.xml` file](#preparing-your-settingsxml-file).
+
+```xml
+  <repository>
+    <id>github</id>
+    <name>GitHub TheDesignCraftYT Apache Maven Packages</name>
+    <url>https://maven.pkg.github.com/TheDesignCraftYT/DBS</url>
+  </repository>
+```
+
+```xml
+<dependency>
+  <groupId>de.thedesigncraft.discord.botstuff</groupId>
+  <artifactId>dbs</artifactId>
+  <version>VERSION</version>
+</dependency>
+```
+
+#### Preparing your `settings.xml` file
+
+If you don't already have a `settings.xml` file, create one at *~/.m2/settings.xml*.
+
+Inside the `<servers>` tag, add a `<server>` child tag with an `<id>`, set your GitHub username as `<username>` and add a [personal GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) in `<password>`.
+
+In the end it should look like this:
+```xml
+<server>
+      <id>github</id>
+      <username>USERNAME</username>
+      <password>TOKEN</password>
+</server>
+```
+
+### Gradle
+
+Be sure to replace **`USERNAME`** below with your GitHub username and **`TOKEN`** with a [personal GitHub access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
+
+**Gradle Groovy:**
+
+```gradle
+repositories {
+    maven {
+        url = uri 'https://maven.pkg.github.com/TheDesignCraftYT/DBS'
+        credentials {
+            username = project.findProperty('gpr.user') ?: 'USERNAME'
+            password = project.findProperty('gpr.key') ?: 'TOKEN'
+        }
+    }
+}
+```
+
+```gradle
+dependencies {
+    implementation 'de.thedesigncraft.discord.botstuff.dbs:dbs:VERSION'
+}
+```
+
+**Kotlin DSL:**
+
+```gradle
+repositories {
+    maven {
+        url = uri("https://maven.pkg.github.com/TheDesignCraftYT/DBS")
+        credentials {
+            username = project.findProperty("gpr.user") as String? ?: "USERNAME"
+            password = project.findProperty("gpr.key") as String? ?: "TOKEN"
+        }
+    }
+}
+```
+
+```gradle
+dependencies {
+    implementation("de.thedesigncraft.discord.botstuff.dbs:dbs:VERSION")
+}
+```
