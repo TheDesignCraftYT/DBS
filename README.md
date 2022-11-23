@@ -9,7 +9,7 @@
 
 <img align="right" src="" height="200" width="200">
 
-[ ![releases][] ][download]
+[ ![releases-shield][] ][download]
 [ ![license-shield][] ][license]
 [ ![discord-shield][] ][discord-invite]
 
