@@ -16,7 +16,7 @@
 
 # DBS (Discord Bot Stuff)
 
-DBS is a Java library that makes it very easy for you to program Discord Bots in Java.
+DBS is a Java library that makes it very easy for you to program Discord Bots in Java. <br>
 It includes many basic functions and a few easy-to-use extra elements.
 
 ## Summary
