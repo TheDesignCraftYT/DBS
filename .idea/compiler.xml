@@ -7,10 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dbs" />
+        <module name="DBS" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="DBS" target="18" />
-    </bytecodeTargetLevel>
   </component>
 </project>

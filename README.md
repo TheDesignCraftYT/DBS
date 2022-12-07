@@ -7,7 +7,7 @@
 [stable-releases-shield]: https://img.shields.io/github/v/release/TheDesignCraftYT/DBS?label=Latest%20Stable
 [snapshots-shield]: https://img.shields.io/github/v/release/TheDesignCraftYT/DBS?include_prereleases&label=Latest%20Snapshot
 
-<img align="right" src="" height="200" width="200">
+<img align="right" src="https://github.com/TheDesignCraftYT/DBS/blob/main/blob/assets/readme/dbs_logo.png?raw=true" height="200" width="200">
 
 [ ![releases-shield][] ][download]
 [ ![license-shield][] ][license]
