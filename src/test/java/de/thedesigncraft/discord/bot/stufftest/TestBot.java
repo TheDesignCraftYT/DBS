@@ -16,7 +16,7 @@ public class TestBot extends StartupSetup {
         setProjectName("TestBot");
         setVersions(Collections.singletonList(new VersionBuilder().setName("v1.0.0-alpha.1").setType(Version.Type.ALPHA).build()));
         setCommandCategories(new CommandCategoryBuilder().setName("Test").build());
-        setToken(Version.Type.ALPHA, "MTA0MTAyNDM0MjY3NjQ4ODMwMw.GGYbcC.C0k_6cO01FQHTMrQlXUxYkB-UTyOuA97Yl2s_8");
+        setToken(Version.Type.ALPHA, "YOUR_TOKEN");
 
         new Main();
 
