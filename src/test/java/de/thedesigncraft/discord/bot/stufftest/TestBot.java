@@ -1,7 +1,7 @@
 package de.thedesigncraft.discord.bot.stufftest;
 
-import de.thedesigncraft.manage.DBS;
-import de.thedesigncraft.manage.setup.DBSSetupBuilder;
+import de.thedesigncraft.dbs.manage.DBS;
+import de.thedesigncraft.dbs.manage.setup.DBSSetupBuilder;
 
 public class TestBot {
 
