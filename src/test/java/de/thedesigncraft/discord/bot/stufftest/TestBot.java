@@ -1,24 +1,13 @@
 package de.thedesigncraft.discord.bot.stufftest;
 
-import de.thedesigncraft.discord.botstuff.essential.manage.Main;
-import de.thedesigncraft.discord.botstuff.essential.manage.commands.discord.manage.categories.CommandCategoryBuilder;
-import de.thedesigncraft.discord.botstuff.essential.manage.versions.Version;
-import de.thedesigncraft.discord.botstuff.essential.manage.versions.VersionBuilder;
-import de.thedesigncraft.discord.botstuff.essential.setup.StartupSetup;
+import de.thedesigncraft.manage.DBS;
+import de.thedesigncraft.manage.setup.DBSSetupBuilder;
 
-import java.util.Collections;
+public class TestBot {
 
-public class TestBot extends StartupSetup {
+    public static void main(String[] args) throws InterruptedException {
 
-    public static void main(String[] args) {
-
-        setMainPackage("de.thedesigncraft.discord.bot.stufftest");
-        setProjectName("TestBot");
-        setVersions(Collections.singletonList(new VersionBuilder().setName("v1.0.0-alpha.1").setType(Version.Type.ALPHA).build()));
-        setCommandCategories(new CommandCategoryBuilder().setName("Test").build());
-        setToken(Version.Type.ALPHA, "YOUR_TOKEN");
-
-        new Main();
+        new DBS(new DBSSetupBuilder().setMainPackage("de.thedesigncraft.discord.bot.stufftest").setToken("MTAzNDExNzY1MTMzMDUwNjgyMw.GvcWDk.CX6bKYl_QaK8tnw7RZ7bWBo5ohcjXgoNy3-KY4").build());
 
     }
 
