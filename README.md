@@ -55,8 +55,8 @@ When you try to start your Bot now, it won't work, because the bot is missing so
 
 ```php
 Exception in thread "main" java.lang.IllegalArgumentException: mainPackage may not be null
-	at de.thedesigncraft.discord.botstuff.essential.Checks.notNull(Checks.java:13)
-	at de.thedesigncraft.discord.botstuff.essential.Checks.notEmpty(Checks.java:32)
+	at de.thedesigncraft.tools.Checks.notNull(Checks.java:13)
+	at de.thedesigncraft.tools.Checks.notEmpty(Checks.java:32)
 	at de.thedesigncraft.discord.botstuff.essential.EssentialPackage.checkValues(EssentialPackage.java:33)
 	at de.thedesigncraft.discord.botstuff.essential.manage.Main.<init>(Main.java:33)
 	at de.thedesigncraft.discord.bot.stufftest.TestBot.main(TestBot.java:10)
