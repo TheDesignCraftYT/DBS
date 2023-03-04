@@ -7,7 +7,10 @@ public class TestBot {
 
     public static void main(String[] args) throws InterruptedException {
 
-        new DBS(new DBSSetupBuilder().setMainPackage("de.thedesigncraft.discord.bot.stufftest").setToken("MTAzNDExNzY1MTMzMDUwNjgyMw.GvcWDk.CX6bKYl_QaK8tnw7RZ7bWBo5ohcjXgoNy3-KY4").build());
+        new DBS(new DBSSetupBuilder()
+                .setMainPackage("de.thedesigncraft.discord.bot.stufftest")
+                .setToken("YOUR_TOKEN")
+                .build());
 
     }
 
