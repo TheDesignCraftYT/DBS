@@ -1,6 +1,6 @@
 package de.thedesigncraft.commands.console;
 
-import de.thedesigncraft.discord.botstuff.essential.manage.Main;
+import de.thedesigncraft.manage.DBS;
 import de.thedesigncraft.manage.commands.console.IConsoleCommand;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,6 +22,6 @@ public class ShutdownConsoleCommand implements IConsoleCommand {
 
     @Override
     public void execute() {
-        Main.shutdown();
+        DBS.shutdown();
     }
 }

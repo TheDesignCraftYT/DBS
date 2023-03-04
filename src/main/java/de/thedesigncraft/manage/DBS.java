@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -43,10 +44,10 @@ public class DBS {
         if (setup.getActivity() != null)
             builder.setActivity(setup.getActivity());
 
-        if (!Checks.isNullOrEmpty(List.of(getEventListeners())))
+        if (getEventListeners() != null && getEventListeners().length > 0)
             builder.addEventListeners(getEventListeners());
 
-        if (!Checks.isNullOrEmpty(List.of(setup.getEventListeners())))
+        if (setup.getEventListeners() != null && setup.getEventListeners().length > 0)
             builder.addEventListeners(setup.getEventListeners());
 
         if (!Checks.isNullOrEmpty(setup.getGatewayIntents()))

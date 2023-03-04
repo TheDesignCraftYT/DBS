@@ -1,6 +1,5 @@
 package de.thedesigncraft.tools;
 
-import de.thedesigncraft.discord.botstuff.essential.setup.StartupValues;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import org.jetbrains.annotations.NotNull;
