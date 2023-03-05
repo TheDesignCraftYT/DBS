@@ -1,7 +1,8 @@
 package de.thedesigncraft.discord.bot.stufftest;
 
-import de.thedesigncraft.dbs.manage.DBS;
-import de.thedesigncraft.dbs.manage.setup.DBSSetupBuilder;
+import de.thedesigncraft.discord.listeners.InteractionErrorListener;
+import de.thedesigncraft.discord.manage.DBS;
+import de.thedesigncraft.discord.manage.setup.DBSSetupBuilder;
 
 public class TestBot {
 
@@ -11,6 +12,8 @@ public class TestBot {
                 .setMainPackage("de.thedesigncraft.discord.bot.stufftest")
                 .setToken("YOUR_TOKEN")
                 .build());
+
+        InteractionErrorListener.users.add(DBS.getJDA().retrieveUserById("DEV_ID").complete());
 
     }
 
