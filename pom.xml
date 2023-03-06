@@ -72,7 +72,7 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.7</version>
                 <configuration>
-                    <packaging>jar</packaging>
+                    <packaging>pom</packaging>
                 </configuration>
             </plugin>
         </plugins>
