@@ -24,8 +24,7 @@ It includes many basic functions and a few easy-to-use extra elements.
 Please see the [JDA Docs](https://jda.wiki) for more general information about Discord Bots in Java.
 
 1. [Implementing DiscordBotStuff into your project](#implementing-discordbotstuff-into-your-project)
-2. [StuffPackages](#stuffpackages)
-3. [Download](#download)
+2. [Download](#download)
 
 ### Implementing [`DiscordBotStuff`](https://github.com/TheDesignCraftYT/DBS) into your project
 
