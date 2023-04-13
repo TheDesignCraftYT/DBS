@@ -17,7 +17,8 @@ public interface ActionRows {
         return Button.of(ButtonStyle.SECONDARY, "cancel", "Cancel");
     }
 
-    public static List<ActionRow> createFromButtons(@NotNull Collection<Button> buttons) {
+    @NotNull
+    static List<ActionRow> createFromButtons(@NotNull Collection<Button> buttons) {
         if (buttons.size() > 25)
             throw new IllegalArgumentException("The maximum amount of buttons is 25! (You tried to add " + buttons.size() + " buttons!)");
         List<ActionRow> returnList = new ArrayList<>();

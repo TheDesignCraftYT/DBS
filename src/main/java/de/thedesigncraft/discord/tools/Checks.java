@@ -15,6 +15,11 @@ public class Checks {
         return argument == null || argument.isEmpty();
     }
 
+    public static void checkNull(@Nullable Object argument, @NotNull String name) {
+        if (argument == null)
+            throw new IllegalArgumentException(name + " may not be null!");
+    }
+
     public static void checkNullOrEmpty(@Nullable String argument, @NotNull String name) {
         if (isNullOrEmpty(argument))
             throw new IllegalArgumentException(name + " may not be null or empty!");

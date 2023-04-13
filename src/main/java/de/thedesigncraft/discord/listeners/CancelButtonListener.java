@@ -1,7 +1,7 @@
 package de.thedesigncraft.discord.listeners;
 
-import de.thedesigncraft.discord.tools.EmbedTemplates;
 import de.thedesigncraft.discord.tools.ComponentInteractions;
+import de.thedesigncraft.discord.tools.EmbedTemplates;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;

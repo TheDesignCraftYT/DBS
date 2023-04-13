@@ -1,10 +1,10 @@
 package de.thedesigncraft.discord.manage;
 
 import de.thedesigncraft.discord.listeners.InteractionErrorListener;
+import de.thedesigncraft.discord.manage.commands.console.ConsoleCommandListener;
 import de.thedesigncraft.discord.manage.commands.discord.DiscordCommandManager;
 import de.thedesigncraft.discord.manage.setup.DBSSetup;
 import de.thedesigncraft.discord.tools.Checks;
-import de.thedesigncraft.discord.manage.commands.console.ConsoleCommandListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -14,7 +14,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class DBS {
