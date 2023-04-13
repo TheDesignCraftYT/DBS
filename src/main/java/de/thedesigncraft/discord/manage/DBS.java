@@ -43,7 +43,7 @@ public class DBS {
         if (setup.getActivity() != null)
             builder.setActivity(setup.getActivity());
 
-        if (getEventListeners() != null && getEventListeners().length > 0)
+        if (getEventListeners().length > 0)
             builder.addEventListeners(getEventListeners());
 
         if (setup.getEventListeners() != null && setup.getEventListeners().length > 0)
