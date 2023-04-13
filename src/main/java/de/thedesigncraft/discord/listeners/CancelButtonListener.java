@@ -18,7 +18,7 @@ public class CancelButtonListener extends ListenerAdapter {
         if (!event.getComponentId().equals("cancel"))
             return;
 
-        if (!ComponentInteractions.getUserThatInitialized(event).equals(event.getUser()))
+        if (ComponentInteractions.getUserThatInitialized(event) == null || !ComponentInteractions.getUserThatInitialized(event).equals(event.getUser()))
             return;
 
         event.getMessage().delete().queue();

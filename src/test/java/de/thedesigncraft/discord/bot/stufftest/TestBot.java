@@ -6,14 +6,14 @@ import de.thedesigncraft.discord.manage.setup.DBSSetupBuilder;
 
 public class TestBot {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
         new DBS(new DBSSetupBuilder()
                 .setMainPackage("de.thedesigncraft.discord.bot.stufftest")
-                .setToken("YOUR_TOKEN")
+                .setToken(System.getenv("TOKEN"))
                 .build());
 
-        InteractionErrorListener.users.add(DBS.getJDA().retrieveUserById("DEV_ID").complete());
+        InteractionErrorListener.addUserById(Long.parseLong(System.getenv("DEV_ID")));
 
     }
 

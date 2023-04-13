@@ -68,11 +68,10 @@ public class DBS {
 
         logger.info("DBS is ready!");
         logger.info("Bot is online as " + jda.getSelfUser().getAsTag() + "!");
-
     }
 
     @NotNull
-    private static Object[] getEventListeners() {
+    private static Object @NotNull [] getEventListeners() {
         List<Object> returnList = new ArrayList<>();
         List<Class<?>> classes = new ArrayList<>();
         ClassManager.getInstantiatedClasses(mainPackage, ListenerAdapter.class, List.of(DiscordCommandManager.class, InteractionErrorListener.class)).stream().filter(o -> !classes.contains(o.getClass())).forEach(o -> {

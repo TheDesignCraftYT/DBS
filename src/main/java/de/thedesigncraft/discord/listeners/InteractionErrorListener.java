@@ -1,5 +1,7 @@
 package de.thedesigncraft.discord.listeners;
 
+import de.thedesigncraft.discord.manage.DBS;
+import de.thedesigncraft.discord.manage.GlobalLogger;
 import de.thedesigncraft.discord.tools.Checks;
 import de.thedesigncraft.discord.tools.EmbedTemplates;
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -23,7 +25,17 @@ import java.util.concurrent.TimeUnit;
 
 public class InteractionErrorListener extends ListenerAdapter {
 
-    public static final List<User> users = new ArrayList<>();
+    private static final List<User> users = new ArrayList<>();
+
+    public static void addUserById(long userId) {
+        try {
+            User user = DBS.getJDA().retrieveUserById(userId).complete();
+            users.add(user);
+            GlobalLogger.info(InteractionErrorListener.class, "Registered user '" + user.getAsTag() + "' as bot developer.");
+        } catch (Exception e) {
+            GlobalLogger.exceptionError(e);
+        }
+    }
 
     @Override
     public void onButtonInteraction(@NotNull ButtonInteractionEvent event) {
