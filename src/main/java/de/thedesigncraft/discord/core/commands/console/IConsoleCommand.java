@@ -18,7 +18,8 @@ public interface IConsoleCommand {
 
     boolean needsLines();
 
-    void execute();
+    @NotNull
+    String execute();
 
     @NotNull
     static Map<String, IConsoleCommand> getConsoleCommandsMap() {

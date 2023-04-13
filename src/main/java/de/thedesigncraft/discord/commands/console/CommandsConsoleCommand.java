@@ -1,5 +1,6 @@
 package de.thedesigncraft.discord.commands.console;
 
+import de.thedesigncraft.discord.core.commands.console.IConsoleCommand;
 import org.jetbrains.annotations.NotNull;
 
 public class CommandsConsoleCommand implements IConsoleCommand {
@@ -19,9 +20,12 @@ public class CommandsConsoleCommand implements IConsoleCommand {
         return true;
     }
 
+    @NotNull
     @Override
-    public void execute() {
-        System.out.println("All console commands:");
-        IConsoleCommand.getActivatedConsoleCommandsMap().forEach((s, iConsoleCommand) -> System.out.println("| - " + iConsoleCommand.getName().toLowerCase()));
+    public String execute() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("All console commands:");
+        IConsoleCommand.getActivatedConsoleCommandsMap().forEach((s, iConsoleCommand) -> stringBuilder.append("\n| - ").append(iConsoleCommand.getName().toLowerCase()));
+        return stringBuilder.toString();
     }
 }

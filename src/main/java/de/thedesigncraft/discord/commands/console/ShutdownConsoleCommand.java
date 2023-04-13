@@ -20,8 +20,10 @@ public class ShutdownConsoleCommand implements IConsoleCommand {
         return false;
     }
 
+    @NotNull
     @Override
-    public void execute() {
+    public String execute() {
         DBS.shutdown();
+        return "";
     }
 }
