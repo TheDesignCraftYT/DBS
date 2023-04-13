@@ -19,8 +19,10 @@ public class DBSSetup {
     private final List<GatewayIntent> gatewayIntents;
     private final List<CacheFlag> cacheFlags;
     private final MemberCachePolicy memberCachePolicy;
+    private final List<Long> botDevelopers;
+    private final long botLogChannel;
 
-    public DBSSetup(String token, Activity activity, OnlineStatus status, String mainPackage, List<Object> eventListeners, List<GatewayIntent> gatewayIntents, List<CacheFlag> cacheFlags, MemberCachePolicy memberCachePolicy) {
+    public DBSSetup(String token, Activity activity, OnlineStatus status, String mainPackage, List<Object> eventListeners, List<GatewayIntent> gatewayIntents, List<CacheFlag> cacheFlags, MemberCachePolicy memberCachePolicy, List<Long> botDevelopers, long botLogChannel) {
         this.token = token;
         this.activity = activity;
         this.status = status;
@@ -29,6 +31,8 @@ public class DBSSetup {
         this.gatewayIntents = gatewayIntents;
         this.cacheFlags = cacheFlags;
         this.memberCachePolicy = memberCachePolicy;
+        this.botDevelopers = botDevelopers;
+        this.botLogChannel = botLogChannel;
     }
 
     public String getToken() {
@@ -63,6 +67,14 @@ public class DBSSetup {
 
     public MemberCachePolicy getMemberCachePolicy() {
         return this.memberCachePolicy;
+    }
+
+    public List<Long> getBotDevelopers() {
+        return this.botDevelopers;
+    }
+
+    public long getBotLogChannel() {
+        return this.botLogChannel;
     }
 
     public boolean isValid() {

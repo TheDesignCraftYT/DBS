@@ -1,17 +1,16 @@
 package de.thedesigncraft.discord.core;
 
+import de.thedesigncraft.discord.core.commands.console.ConsoleCommandListener;
+import de.thedesigncraft.discord.core.commands.console.DiscordConsoleCommandListener;
+import de.thedesigncraft.discord.core.commands.discord.DiscordCommandManager;
+import de.thedesigncraft.discord.core.setup.DBSSetup;
 import de.thedesigncraft.discord.listeners.InteractionErrorListener;
-import de.thedesigncraft.discord.manage.commands.console.ConsoleCommandListener;
-import de.thedesigncraft.discord.manage.commands.discord.DiscordCommandManager;
-import de.thedesigncraft.discord.manage.setup.DBSSetup;
 import de.thedesigncraft.discord.tools.Checks;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +18,6 @@ import java.util.List;
 public class DBS {
 
     private static JDA jda;
-
-    public static final Logger logger = LoggerFactory.getLogger(DBS.class);
 
     public static String mainPackage = null;
     public static final String dbsPackage = "de.thedesigncraft";
@@ -36,7 +33,7 @@ public class DBS {
     private static void startup(DBSSetup setup) throws Exception {
         if (!setup.isValid())
             throw new IllegalArgumentException("Setup is not valid!");
-        logger.info("Setup is valid!");
+        GlobalLogger.info(DBS.class, "Setup is valid!");
 
         mainPackage = setup.getMainPackage();
 
@@ -68,13 +65,20 @@ public class DBS {
 
         jda = builder.build();
 
+        while (!jda.getStatus().equals(JDA.Status.CONNECTED)) {
+            Thread.sleep(100);
+        }
+
+        DiscordConsoleCommandListener.setMessageChannelById(setup.getBotLogChannel());
+        setup.getBotDevelopers().forEach(InteractionErrorListener::addUserById);
+
         jda.awaitReady().addEventListener(new DiscordCommandManager());
         jda.awaitReady().addEventListener(new InteractionErrorListener());
 
-        ConsoleCommandListener.init();
+        GlobalThreadPool.execute(new ConsoleCommandListener());
 
-        logger.info("DBS is ready!");
-        logger.info("Bot is online as " + jda.getSelfUser().getAsTag() + "!");
+        GlobalLogger.info(DBS.class, "DBS is ready!");
+        GlobalLogger.info(DBS.class, "Bot is online as " + jda.getSelfUser().getAsTag() + "!");
     }
 
     @NotNull
@@ -97,16 +101,19 @@ public class DBS {
     }
 
     public static void shutdown() {
-        System.out.println("--------------------");
         if (DBS.jda != null) {
-            System.out.println("Shutting down...");
-            System.out.println("--------------------");
+            GlobalLogger.info(DBS.class, "Shutting down...");
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             DBS.jda.getPresence().setStatus(OnlineStatus.OFFLINE);
             DBS.jda.shutdown();
-            logger.info("StatusUpdate: Offline");
+            GlobalLogger.info(DBS.class, "StatusUpdate: Offline");
             System.exit(0);
         } else {
-            logger.error("JDA is null");
+            GlobalLogger.error(DBS.class, "JDA is null");
         }
     }
 

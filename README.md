@@ -7,7 +7,7 @@
 [stable-releases-shield]: https://img.shields.io/github/v/release/TheDesignCraftYT/DBS?label=Latest%20Stable
 [snapshots-shield]: https://img.shields.io/github/v/release/TheDesignCraftYT/DBS?include_prereleases&label=Latest%20Snapshot
 
-<img align="right" src="https://github.com/TheDesignCraftYT/DBS/blob/main/blob/assets/readme/dbs_logo.png?raw=true" height="200" width="200">
+<img align="right" src="https://github.com/TheDesignCraftYT/DBS/blob/main/blob/assets/readme/dbs_logo.png?raw=true" height="200" width="200" alt="DBS Logo">
 
 [ ![releases-shield][] ][download]
 [ ![license-shield][] ][license]
@@ -30,26 +30,26 @@ Please see the [JDA Docs](https://jda.wiki) for more general information about D
 
 To activate and use [`DiscordBotStuff`](https://github.com/TheDesignCraftYT/DBS) into your project, you have to put the following line into your Main class: 
 ```java
-new de.thedesigncraft.discord.manage.DBS(YOUR_SETUP);
+new de.thedesigncraft.discord.core.DBS(YOUR_SETUP);
 ```
 Be sure to replace `YOUR_SETUP` with a [`DBSSetup`](https://github.com/TheDesignCraftYT/DBS/blob/main/src/main/java/de/thedesigncraft/discord/manage/setup/DBSSetup.java), which you can create using the [`DBSSetupBuilder`](https://github.com/TheDesignCraftYT/DBS/blob/main/src/main/java/de/thedesigncraft/discord/manage/setup/DBSSetupBuilder.java). An example Main class could look like this:
 
 ```java
 package dev.weirddude.discord.bot;
 
-import de.thedesigncraft.discord.manage.DBS;
-import de.thedesigncraft.discord.manage.setup.DBSSetup;
-import de.thedesigncraft.discord.manage.setup.DBSSetupBuilder;
+import de.thedesigncraft.discord.core.DBS;
+import de.thedesigncraft.discord.core.setup.DBSSetup;
+import de.thedesigncraft.discord.core.setup.DBSSetupBuilder;
 
 public class MyBot {
 
     public static void main(String[] args) {
 
         DBSSetupBuilder builder = new DBSSetupBuilder();
-        
+
         builder.setMainPackage("dev.weirddude.discord.bot");
         builder.setToken("YOUR_TOKEN");
-        
+
         DBSSetup setup = builder.build();
 
         new DBS(setup);
@@ -78,7 +78,7 @@ Be sure to replace the **`VERSION`** key below with the one of the versions show
 
 ### Maven
 
-If you haven't yet created a `settings.xml` file or you haven't yet added your GitHub-Authentication in the `settings.xml` file, take a look at [Preparing your `settings.xml` file](#preparing-your-settingsxml-file).
+If you haven't yet created a `settings.xml` file, or you haven't yet added your GitHub-Authentication in the `settings.xml` file, take a look at [Preparing your `settings.xml` file](#preparing-your-settingsxml-file).
 
 ```xml
   <repository>

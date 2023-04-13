@@ -11,9 +11,10 @@ public class TestBot {
         new DBS(new DBSSetupBuilder()
                 .setMainPackage("de.thedesigncraft.discord.bot.stufftest")
                 .setToken(System.getenv("TOKEN"))
+                .setBotLogChannelById(831503129610158090L)
+                .addBotDevelopersById(Long.parseLong(System.getenv("DEV_ID")))
+                .addGatewayIntents(GatewayIntent.MESSAGE_CONTENT)
                 .build());
-
-        InteractionErrorListener.addUserById(Long.parseLong(System.getenv("DEV_ID")));
 
     }
 

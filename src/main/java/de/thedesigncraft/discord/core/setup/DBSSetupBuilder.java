@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DBSSetupBuilder {
@@ -19,6 +20,8 @@ public class DBSSetupBuilder {
     private List<GatewayIntent> gatewayIntents;
     private List<CacheFlag> cacheFlags;
     private MemberCachePolicy memberCachePolicy;
+    private List<Long> botDevelopers = new ArrayList<>();
+    private long botLogChannel;
 
     public DBSSetupBuilder() {
     }
@@ -32,6 +35,8 @@ public class DBSSetupBuilder {
         this.gatewayIntents = builder.gatewayIntents;
         this.cacheFlags = builder.cacheFlags;
         this.memberCachePolicy = builder.memberCachePolicy;
+        this.botDevelopers = builder.botDevelopers;
+        this.botLogChannel = builder.botLogChannel;
     }
 
     public DBSSetupBuilder setToken(String token) {
@@ -83,8 +88,23 @@ public class DBSSetupBuilder {
         return this;
     }
 
+    public DBSSetupBuilder addBotDevelopersById(Long... userIds) {
+        this.botDevelopers.addAll(List.of(userIds));
+        return this;
+    }
+
+    public DBSSetupBuilder setBotDevelopersByIds(List<Long> userIds) {
+        this.botDevelopers = new ArrayList<>(userIds);
+        return this;
+    }
+
+    public DBSSetupBuilder setBotLogChannelById(Long botLogChannelId) {
+        this.botLogChannel = botLogChannelId;
+        return this;
+    }
+
     public DBSSetup build() {
-        return new DBSSetup(this.token, this.activity, this.status, this.mainPackage, this.eventListeners, this.gatewayIntents, this.cacheFlags, this.memberCachePolicy);
+        return new DBSSetup(this.token, this.activity, this.status, this.mainPackage, this.eventListeners, this.gatewayIntents, this.cacheFlags, this.memberCachePolicy, this.botDevelopers, this.botLogChannel);
     }
 
 }
