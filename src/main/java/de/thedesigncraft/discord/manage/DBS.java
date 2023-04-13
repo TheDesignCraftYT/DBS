@@ -25,7 +25,15 @@ public class DBS {
     public static String mainPackage = null;
     public static final String dbsPackage = "de.thedesigncraft";
 
-    public DBS(@NotNull DBSSetup setup) throws InterruptedException {
+    public DBS(@NotNull DBSSetup setup) {
+        try {
+            startup(setup);
+        } catch (Exception e) {
+            GlobalLogger.exceptionError(e);
+        }
+    }
+
+    private static void startup(DBSSetup setup) throws Exception {
         if (!setup.isValid())
             throw new IllegalArgumentException("Setup is not valid!");
         logger.info("Setup is valid!");
