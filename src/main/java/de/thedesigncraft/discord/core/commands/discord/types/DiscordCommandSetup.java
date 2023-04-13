@@ -1,9 +1,9 @@
 package de.thedesigncraft.discord.core.commands.discord.types;
 
-import de.thedesigncraft.discord.manage.commands.discord.types.message.MessageCommandSetup;
-import de.thedesigncraft.discord.manage.commands.discord.types.slash.SlashCommandSetup;
-import de.thedesigncraft.discord.manage.commands.discord.types.slashanduser.SlashAndUserCommandSetup;
-import de.thedesigncraft.discord.manage.commands.discord.types.user.UserCommandSetup;
+import de.thedesigncraft.discord.core.commands.discord.types.message.MessageCommandSetup;
+import de.thedesigncraft.discord.core.commands.discord.types.slash.SlashCommandSetup;
+import de.thedesigncraft.discord.core.commands.discord.types.slashanduser.SlashAndUserCommandSetup;
+import de.thedesigncraft.discord.core.commands.discord.types.user.UserCommandSetup;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import org.jetbrains.annotations.NotNull;

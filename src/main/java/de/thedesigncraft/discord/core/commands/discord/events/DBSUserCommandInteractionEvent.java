@@ -1,6 +1,6 @@
 package de.thedesigncraft.discord.core.commands.discord.events;
 
-import de.thedesigncraft.discord.manage.commands.discord.types.user.IUserContextMenu;
+import de.thedesigncraft.discord.core.commands.discord.types.user.IUserContextMenu;
 import net.dv8tion.jda.api.events.interaction.command.UserContextInteractionEvent;
 import org.jetbrains.annotations.NotNull;
 

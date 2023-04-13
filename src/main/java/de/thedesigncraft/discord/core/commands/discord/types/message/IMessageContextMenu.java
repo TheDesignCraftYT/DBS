@@ -1,9 +1,9 @@
 package de.thedesigncraft.discord.core.commands.discord.types.message;
 
-import de.thedesigncraft.discord.manage.ClassManager;
-import de.thedesigncraft.discord.manage.DBS;
-import de.thedesigncraft.discord.manage.commands.discord.events.DBSMessageCommandInteractionEvent;
-import de.thedesigncraft.discord.manage.commands.discord.types.IDiscordCommand;
+import de.thedesigncraft.discord.core.ClassManager;
+import de.thedesigncraft.discord.core.DBS;
+import de.thedesigncraft.discord.core.commands.discord.events.DBSMessageCommandInteractionEvent;
+import de.thedesigncraft.discord.core.commands.discord.types.IDiscordCommand;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

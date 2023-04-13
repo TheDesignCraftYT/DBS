@@ -1,6 +1,6 @@
 package de.thedesigncraft.discord.core.commands.discord.events;
 
-import de.thedesigncraft.discord.manage.commands.discord.types.message.IMessageContextMenu;
+import de.thedesigncraft.discord.core.commands.discord.types.message.IMessageContextMenu;
 import net.dv8tion.jda.api.events.interaction.command.MessageContextInteractionEvent;
 import org.jetbrains.annotations.NotNull;
 

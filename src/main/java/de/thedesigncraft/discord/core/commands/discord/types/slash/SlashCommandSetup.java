@@ -1,6 +1,6 @@
 package de.thedesigncraft.discord.core.commands.discord.types.slash;
 
-import de.thedesigncraft.discord.manage.commands.discord.types.DiscordCommandSetup;
+import de.thedesigncraft.discord.core.commands.discord.types.DiscordCommandSetup;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;

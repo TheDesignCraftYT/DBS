@@ -1,7 +1,7 @@
 package de.thedesigncraft.discord.listeners;
 
-import de.thedesigncraft.discord.manage.DBS;
-import de.thedesigncraft.discord.manage.GlobalLogger;
+import de.thedesigncraft.discord.core.DBS;
+import de.thedesigncraft.discord.core.GlobalLogger;
 import de.thedesigncraft.discord.tools.Checks;
 import de.thedesigncraft.discord.tools.EmbedTemplates;
 import net.dv8tion.jda.api.EmbedBuilder;

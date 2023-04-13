@@ -1,8 +1,8 @@
 package de.thedesigncraft.discord.bot.stufftest;
 
-import de.thedesigncraft.discord.listeners.InteractionErrorListener;
-import de.thedesigncraft.discord.manage.DBS;
-import de.thedesigncraft.discord.manage.setup.DBSSetupBuilder;
+import de.thedesigncraft.discord.core.DBS;
+import de.thedesigncraft.discord.core.setup.DBSSetupBuilder;
+import net.dv8tion.jda.api.requests.GatewayIntent;
 
 public class TestBot {
 

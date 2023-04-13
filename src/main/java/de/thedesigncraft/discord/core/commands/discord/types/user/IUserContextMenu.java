@@ -1,9 +1,9 @@
 package de.thedesigncraft.discord.core.commands.discord.types.user;
 
-import de.thedesigncraft.discord.manage.ClassManager;
-import de.thedesigncraft.discord.manage.DBS;
-import de.thedesigncraft.discord.manage.commands.discord.events.DBSUserCommandInteractionEvent;
-import de.thedesigncraft.discord.manage.commands.discord.types.IDiscordCommand;
+import de.thedesigncraft.discord.core.ClassManager;
+import de.thedesigncraft.discord.core.DBS;
+import de.thedesigncraft.discord.core.commands.discord.events.DBSUserCommandInteractionEvent;
+import de.thedesigncraft.discord.core.commands.discord.types.IDiscordCommand;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

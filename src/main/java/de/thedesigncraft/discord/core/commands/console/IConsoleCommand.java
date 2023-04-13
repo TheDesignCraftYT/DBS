@@ -1,7 +1,7 @@
 package de.thedesigncraft.discord.core.commands.console;
 
-import de.thedesigncraft.discord.manage.ClassManager;
-import de.thedesigncraft.discord.manage.DBS;
+import de.thedesigncraft.discord.core.ClassManager;
+import de.thedesigncraft.discord.core.DBS;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

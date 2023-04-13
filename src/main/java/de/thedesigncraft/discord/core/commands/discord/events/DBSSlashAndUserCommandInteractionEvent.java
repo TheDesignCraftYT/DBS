@@ -1,6 +1,6 @@
 package de.thedesigncraft.discord.core.commands.discord.events;
 
-import de.thedesigncraft.discord.manage.commands.discord.types.slashanduser.ISlashAndUserCommand;
+import de.thedesigncraft.discord.core.commands.discord.types.slashanduser.ISlashAndUserCommand;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.interaction.command.GenericCommandInteractionEvent;

@@ -1,6 +1,6 @@
 package de.thedesigncraft.discord.core.commands.discord.types.message;
 
-import de.thedesigncraft.discord.manage.commands.discord.types.DiscordCommandSetup;
+import de.thedesigncraft.discord.core.commands.discord.types.DiscordCommandSetup;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import org.jetbrains.annotations.NotNull;

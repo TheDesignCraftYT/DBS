@@ -1,7 +1,7 @@
 package de.thedesigncraft.discord.core.commands.discord.events;
 
-import de.thedesigncraft.discord.manage.commands.discord.menus.IMenu;
-import de.thedesigncraft.discord.manage.commands.discord.types.IDiscordCommand;
+import de.thedesigncraft.discord.core.commands.discord.menus.IMenu;
+import de.thedesigncraft.discord.core.commands.discord.types.IDiscordCommand;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.interaction.command.GenericCommandInteractionEvent;

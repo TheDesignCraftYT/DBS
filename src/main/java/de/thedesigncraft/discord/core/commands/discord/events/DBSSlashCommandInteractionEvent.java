@@ -1,6 +1,6 @@
 package de.thedesigncraft.discord.core.commands.discord.events;
 
-import de.thedesigncraft.discord.manage.commands.discord.types.slash.ISlashCommand;
+import de.thedesigncraft.discord.core.commands.discord.types.slash.ISlashCommand;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import org.jetbrains.annotations.NotNull;
 

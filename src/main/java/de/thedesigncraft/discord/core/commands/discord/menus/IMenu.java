@@ -1,7 +1,7 @@
 package de.thedesigncraft.discord.core.commands.discord.menus;
 
-import de.thedesigncraft.discord.manage.ClassManager;
-import de.thedesigncraft.discord.manage.DBS;
+import de.thedesigncraft.discord.core.ClassManager;
+import de.thedesigncraft.discord.core.DBS;
 import de.thedesigncraft.discord.tools.ActionRows;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.entities.emoji.Emoji;

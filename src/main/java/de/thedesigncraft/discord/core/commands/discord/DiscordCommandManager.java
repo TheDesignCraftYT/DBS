@@ -1,15 +1,15 @@
 package de.thedesigncraft.discord.core.commands.discord;
 
-import de.thedesigncraft.discord.manage.DBS;
-import de.thedesigncraft.discord.manage.commands.discord.events.DBSMessageCommandInteractionEvent;
-import de.thedesigncraft.discord.manage.commands.discord.events.DBSSlashAndUserCommandInteractionEvent;
-import de.thedesigncraft.discord.manage.commands.discord.events.DBSSlashCommandInteractionEvent;
-import de.thedesigncraft.discord.manage.commands.discord.events.DBSUserCommandInteractionEvent;
-import de.thedesigncraft.discord.manage.commands.discord.types.IDiscordCommand;
-import de.thedesigncraft.discord.manage.commands.discord.types.message.IMessageContextMenu;
-import de.thedesigncraft.discord.manage.commands.discord.types.slash.ISlashCommand;
-import de.thedesigncraft.discord.manage.commands.discord.types.slashanduser.ISlashAndUserCommand;
-import de.thedesigncraft.discord.manage.commands.discord.types.user.IUserContextMenu;
+import de.thedesigncraft.discord.core.DBS;
+import de.thedesigncraft.discord.core.commands.discord.events.DBSMessageCommandInteractionEvent;
+import de.thedesigncraft.discord.core.commands.discord.events.DBSSlashAndUserCommandInteractionEvent;
+import de.thedesigncraft.discord.core.commands.discord.events.DBSSlashCommandInteractionEvent;
+import de.thedesigncraft.discord.core.commands.discord.events.DBSUserCommandInteractionEvent;
+import de.thedesigncraft.discord.core.commands.discord.types.IDiscordCommand;
+import de.thedesigncraft.discord.core.commands.discord.types.message.IMessageContextMenu;
+import de.thedesigncraft.discord.core.commands.discord.types.slash.ISlashCommand;
+import de.thedesigncraft.discord.core.commands.discord.types.slashanduser.ISlashAndUserCommand;
+import de.thedesigncraft.discord.core.commands.discord.types.user.IUserContextMenu;
 import de.thedesigncraft.discord.tools.Checks;
 import de.thedesigncraft.discord.tools.EmbedTemplates;
 import net.dv8tion.jda.api.entities.Guild;

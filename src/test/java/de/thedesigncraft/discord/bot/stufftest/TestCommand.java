@@ -1,9 +1,9 @@
 package de.thedesigncraft.discord.bot.stufftest;
 
-import de.thedesigncraft.discord.manage.commands.discord.events.DBSSlashAndUserCommandInteractionEvent;
-import de.thedesigncraft.discord.manage.commands.discord.types.slashanduser.ISlashAndUserCommand;
-import de.thedesigncraft.discord.manage.commands.discord.types.slashanduser.SlashAndUserCommandSetup;
-import de.thedesigncraft.discord.manage.commands.discord.types.slashanduser.SlashAndUserCommandSetupBuilder;
+import de.thedesigncraft.discord.core.commands.discord.events.DBSSlashAndUserCommandInteractionEvent;
+import de.thedesigncraft.discord.core.commands.discord.types.slashanduser.ISlashAndUserCommand;
+import de.thedesigncraft.discord.core.commands.discord.types.slashanduser.SlashAndUserCommandSetup;
+import de.thedesigncraft.discord.core.commands.discord.types.slashanduser.SlashAndUserCommandSetupBuilder;
 import org.jetbrains.annotations.NotNull;
 
 public class TestCommand implements ISlashAndUserCommand {

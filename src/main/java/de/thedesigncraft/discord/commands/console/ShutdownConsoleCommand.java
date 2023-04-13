@@ -1,7 +1,7 @@
 package de.thedesigncraft.discord.commands.console;
 
-import de.thedesigncraft.discord.manage.DBS;
-import de.thedesigncraft.discord.manage.commands.console.IConsoleCommand;
+import de.thedesigncraft.discord.core.DBS;
+import de.thedesigncraft.discord.core.commands.console.IConsoleCommand;
 import org.jetbrains.annotations.NotNull;
 
 public class ShutdownConsoleCommand implements IConsoleCommand {
