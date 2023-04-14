@@ -21,6 +21,8 @@ It includes many basic functions and a few easy-to-use extra elements.
 
 ## Summary
 
+**NOTE: THIS README IS OUTDATED! IT WILL BE UPDATED SOON!**
+
 Please see the [JDA Docs](https://jda.wiki) for more general information about Discord Bots in Java.
 
 1. [Implementing DiscordBotStuff into your project](#implementing-discordbotstuff-into-your-project)
