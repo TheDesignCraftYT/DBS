@@ -12,11 +12,21 @@ import java.util.List;
 
 public interface IUserContextMenu extends IDiscordCommand {
 
+    /**
+     * @return The setup of the command
+     */
     @NotNull
     UserCommandSetup getSetup();
 
+    /**
+     * The code that should be executed when the command is called
+     * @param event The command event
+     */
     void execute(@NotNull DBSUserCommandInteractionEvent event);
 
+    /**
+     * @return All registered user context menus
+     */
     @NotNull
     static List<IUserContextMenu> getUserContextMenus() {
         List<IUserContextMenu> returnList = new ArrayList<>();
@@ -24,6 +34,10 @@ public interface IUserContextMenu extends IDiscordCommand {
         return returnList;
     }
 
+    /**
+     * @param name The name of the command
+     * @return The command with the given name or null if no command with the given name was found
+     */
     @Nullable
     static IUserContextMenu getByName(@NotNull String name) {
         List<IUserContextMenu> results = getUserContextMenus().stream().filter(iUserContextMenu -> iUserContextMenu.getSetup().getName().equals(name)).toList();

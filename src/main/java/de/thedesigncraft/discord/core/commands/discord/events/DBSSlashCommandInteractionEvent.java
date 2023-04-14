@@ -6,13 +6,25 @@ import org.jetbrains.annotations.NotNull;
 
 public class DBSSlashCommandInteractionEvent extends DBSCommandInteractionEvent {
 
+    /**
+     * The JDA event.
+     */
     private final SlashCommandInteractionEvent event;
 
+    /**
+     * Creates a new {@link DBSSlashCommandInteractionEvent}.
+     *
+     * @param command The command that was executed.
+     * @param event   The JDA event.
+     */
     public DBSSlashCommandInteractionEvent(@NotNull ISlashCommand command, @NotNull SlashCommandInteractionEvent event) {
         super(command, event);
         this.event = event;
     }
 
+    /**
+     * @return The JDA event.
+     */
     @NotNull
     public SlashCommandInteractionEvent getJDAEvent() {
         return event;

@@ -16,10 +16,19 @@ import java.util.List;
 
 public interface IMenu {
 
+    /**
+     * @return The path of the menu.
+     */
     @NotNull String getPath();
 
+    /**
+     * @return The {@link MessageEmbed} of the menu.
+     */
     @NotNull MessageEmbed getEmbed();
 
+    /**
+     * @return The {@link List} of {@link ActionRow}s of the menu.
+     */
     default List<ActionRow> getComponents() {
         List<Button> buttons = new ArrayList<>();
         getMenus().forEach(iMenu -> {
@@ -45,6 +54,9 @@ public interface IMenu {
         return returnList;
     }
 
+    /**
+     * @return The all {@link IMenu}s.
+     */
     @NotNull
     static List<IMenu> getMenus() {
         List<IMenu> returnList = new ArrayList<>();
@@ -52,6 +64,10 @@ public interface IMenu {
         return returnList;
     }
 
+    /**
+     * @param path The path of the menu.
+     * @return The {@link IMenu} with the given path or null if there is no {@link IMenu} with this path.
+     */
     @Nullable
     static IMenu getMenuByPath(@NotNull String path) {
         for (IMenu iMenu : getMenus()) {
@@ -61,6 +77,9 @@ public interface IMenu {
         return null;
     }
 
+    /**
+     * @return The paths of all {@link IMenu}s.
+     */
     @NotNull
     static List<String> getMenuPaths() {
         List<String> returnList = new ArrayList<>();

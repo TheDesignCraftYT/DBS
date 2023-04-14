@@ -12,7 +12,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class DiscordCommandSetup {
-
     private final String name;
     private final IDiscordCommand.Type type;
     private final boolean messageAnswerProtectionEnabled;
@@ -22,6 +21,17 @@ public class DiscordCommandSetup {
     private final boolean guildOnly;
     private final List<Permission> requiredPermissions;
 
+    /**
+     * Creates a new {@link DiscordCommandSetup} with the given parameters
+     *
+     * @param name                       The name of the command
+     * @param messageAnswerProtectionEnabled If the message answer protection is enabled
+     * @param global                     If the command is global
+     * @param guilds                     The guilds where the command is available
+     * @param description                The description of the command
+     * @param guildOnly                  If the command is only available in guilds
+     * @param requiredPermissions        The required permissions to execute the command
+     */
     public DiscordCommandSetup(@NotNull String name, boolean messageAnswerProtectionEnabled, boolean global, @Nullable List<Guild> guilds, @Nullable String description, boolean guildOnly, @Nullable List<Permission> requiredPermissions) {
         this.name = name;
         this.messageAnswerProtectionEnabled = messageAnswerProtectionEnabled;
@@ -35,36 +45,60 @@ public class DiscordCommandSetup {
 
     }
 
+    /**
+     * @return The name of the command
+     */
     @NotNull
     public String getName() {
         return name;
     }
 
+    /**
+     * @return The type of the command
+     */
     @NotNull
     public IDiscordCommand.Type getType() {
         return type;
     }
 
+    /**
+     * @return If the message answer protection is enabled
+     */
     public boolean isMessageAnswerProtectionEnabled() {
         return messageAnswerProtectionEnabled;
     }
 
+    /**
+     * @return If the command is global
+     */
     public boolean isGlobal() {
         return global;
     }
 
+    /**
+     * @return The guilds where the command is available
+     */
     public List<Guild> getGuilds() {
         return guilds;
     }
 
+    /**
+     * @return The description of the command
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * @return If the command is only available in guilds
+     */
     public boolean isGuildOnly() {
         return guildOnly;
     }
 
+    /**
+     * @return The required permissions to execute the command
+     */
     public List<Permission> getRequiredPermissions() {
         return requiredPermissions;
     }

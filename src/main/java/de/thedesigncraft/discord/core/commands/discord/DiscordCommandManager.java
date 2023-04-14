@@ -67,6 +67,9 @@ public class DiscordCommandManager extends ListenerAdapter {
 
     }
 
+    /**
+     * Listenes to the {@link SlashCommandInteractionEvent} and executes the command if the user has the required permissions.
+     */
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
         IDiscordCommand command;
@@ -95,6 +98,9 @@ public class DiscordCommandManager extends ListenerAdapter {
         }
     }
 
+    /**
+     * Listenes to the {@link UserContextInteractionEvent} and executes the command if the user has the required permissions.
+     */
     @Override
     public void onUserContextInteraction(@NotNull UserContextInteractionEvent event) {
         IDiscordCommand command;
@@ -123,6 +129,9 @@ public class DiscordCommandManager extends ListenerAdapter {
         }
     }
 
+    /**
+     * Listenes to the {@link MessageContextInteractionEvent} and executes the command if the user has the required permissions.
+     */
     @Override
     public void onMessageContextInteraction(@NotNull MessageContextInteractionEvent event) {
         IMessageContextMenu command;
@@ -139,6 +148,11 @@ public class DiscordCommandManager extends ListenerAdapter {
         }
     }
 
+    /**
+     * Registers the command to the {@link CommandListUpdateAction}.
+     * @param command The command to register.
+     * @param updateAction The {@link CommandListUpdateAction} to register the command to.
+     */
     private static void registerCommand(@NotNull IDiscordCommand command, @NotNull CommandListUpdateAction updateAction) {
         if (command.getSetup().getType().equals(IDiscordCommand.Type.SLASH))
             registerSlashCommand((ISlashCommand) command, updateAction);
@@ -153,6 +167,11 @@ public class DiscordCommandManager extends ListenerAdapter {
             registerSlashAndUserCommand((ISlashAndUserCommand) command, updateAction);
     }
 
+    /**
+     * Registers the slash command to the {@link CommandListUpdateAction}.
+     * @param command The command to register.
+     * @param updateAction The {@link CommandListUpdateAction} to register the command to.
+     */
     private static void registerSlashCommand(@NotNull ISlashCommand command, @NotNull CommandListUpdateAction updateAction) {
         SlashCommandData data = Commands.slash(
                         command.getSetup().getName(),
@@ -165,6 +184,11 @@ public class DiscordCommandManager extends ListenerAdapter {
         updateAction.addCommands(data);
     }
 
+    /**
+     * Registers the slash and user command to the {@link CommandListUpdateAction}.
+     * @param command The command to register.
+     * @param updateAction The {@link CommandListUpdateAction} to register the command to.
+     */
     private static void registerUserCommand(@NotNull IUserContextMenu command, @NotNull CommandListUpdateAction updateAction) {
         CommandData data = Commands.user(
                         command.getSetup().getName())
@@ -174,6 +198,11 @@ public class DiscordCommandManager extends ListenerAdapter {
         updateAction.addCommands(data);
     }
 
+    /**
+     * Registers the message command to the {@link CommandListUpdateAction}.
+     * @param command The command to register.
+     * @param updateAction The {@link CommandListUpdateAction} to register the command to.
+     */
     private static void registerMessageCommand(@NotNull IMessageContextMenu command, @NotNull CommandListUpdateAction updateAction) {
         CommandData data = Commands.message(
                         command.getSetup().getName())
@@ -183,6 +212,11 @@ public class DiscordCommandManager extends ListenerAdapter {
         updateAction.addCommands(data);
     }
 
+    /**
+     * Registers the slash and user command to the {@link CommandListUpdateAction}.
+     * @param command The command to register.
+     * @param updateAction The {@link CommandListUpdateAction} to register the command to.
+     */
     private static void registerSlashAndUserCommand(@NotNull ISlashAndUserCommand command, @NotNull CommandListUpdateAction updateAction) {
         SlashCommandData slashData = Commands.slash(
                         command.getSetup().getName(),
@@ -200,6 +234,12 @@ public class DiscordCommandManager extends ListenerAdapter {
         updateAction.addCommands(userData);
     }
 
+    /**
+     * Creates an embed that tells the user that he doesn't have the required permissions to execute the command.
+     * @param command The command that the user tried to execute.
+     * @param member The member that tried to execute the command.
+     * @return The {@link MessageEmbed}.
+     */
     @NotNull
     private static MessageEmbed missingPermissionsEmbed(@NotNull IDiscordCommand command, @NotNull Member member) {
         StringBuilder stringBuilder = new StringBuilder();

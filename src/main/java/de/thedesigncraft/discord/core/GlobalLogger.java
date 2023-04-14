@@ -11,22 +11,51 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 public class GlobalLogger {
 
+    /**
+     * Sends a message to the console and to the discord channel
+     *
+     * @param clazz   The class where the message is sent from
+     * @param message The message
+     */
     public static void info(@NotNull Class<?> clazz, String message) {
         sendConsole(Type.INFO, clazz.getSimpleName(), message);
     }
 
+    /**
+     * Sends a message to the console and to the discord channel
+     *
+     * @param clazz   The class where the message is sent from
+     * @param message The message
+     */
     public static void error(@NotNull Class<?> clazz, String message) {
         sendConsole(Type.ERROR, clazz.getSimpleName(), message);
     }
 
+    /**
+     * Sends a message to the console and to the discord channel
+     *
+     * @param exception The exception
+     */
     public static void exceptionError(@NotNull Exception exception) {
         sendConsole(Type.EXCEPTION, exception);
     }
 
+    /**
+     * Sends a message to the console and to the discord channel
+     *
+     * @param clazz   The class where the message is sent from
+     * @param message The message
+     */
     public static void warn(@NotNull Class<?> clazz, String message) {
         sendConsole(Type.WARN, clazz.getSimpleName(), message);
     }
 
+    /**
+     * Sends a message to the console and to the discord channel
+     * @param type The type of the message
+     * @param source The source of the message
+     * @param message The message
+     */
     private static void sendConsole(@NotNull Type type, String source, String message) {
         EmbedBuilder builder = new EmbedBuilder();
         builder.setTitle(type.name() + ": " + source);
@@ -53,6 +82,11 @@ public class GlobalLogger {
         }
     }
 
+    /**
+     * Sends a message to the console and to the discord channel
+     * @param type The type of the message
+     * @param exception The exception
+     */
     private static void sendConsole(@NotNull Type type, @NotNull Exception exception) {
         String source = Arrays.stream(exception.getStackTrace()).findFirst().get().getClassName();
         EmbedBuilder builder = new EmbedBuilder();
@@ -75,6 +109,9 @@ public class GlobalLogger {
             DiscordConsoleCommandListener.getMessageChannel().sendMessageEmbeds(builder.build()).addContent("@everyone").queue();
     }
 
+    /**
+     * The type of the message
+     */
     public enum Type {
         INFO,
         ERROR,

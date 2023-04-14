@@ -7,6 +7,12 @@ import org.jetbrains.annotations.Nullable;
 
 public class ComponentInteractions {
 
+    /**
+     * Returns the user that initialized the interaction.
+     *
+     * @param event The event that was triggered.
+     * @return The user that initialized the interaction.
+     */
     @Nullable
     public static User getUserThatInitialized(@NotNull GenericComponentInteractionCreateEvent event) {
         User user = null;

@@ -10,8 +10,15 @@ import org.jetbrains.annotations.NotNull;
 
 public class DiscordConsoleCommandListener extends ListenerAdapter {
 
+    /**
+     * The message channel where the console is mirrored to.
+     */
     private static MessageChannel messageChannel;
 
+    /**
+     * Sets the message channel where the console is mirrored to.
+     * @param channelId The id of the channel.
+     */
     public static void setMessageChannelById(long channelId) {
         MessageChannel channel = DBS.getJDA().getChannelById(MessageChannel.class, channelId);
         DiscordConsoleCommandListener.messageChannel = channel;
@@ -19,10 +26,17 @@ public class DiscordConsoleCommandListener extends ListenerAdapter {
         GlobalLogger.info(InteractionErrorListener.class, "Registered channel '" + channel.getName() + "' as log channel.");
     }
 
+    /**
+     * Gets the message channel where the console is mirrored to.
+     * @return The message channel.
+     */
     public static MessageChannel getMessageChannel() {
         return messageChannel;
     }
 
+    /**
+     * Checks for console commands and executes them.
+     */
     @Override
     public void onMessageReceived(@NotNull MessageReceivedEvent event) {
 

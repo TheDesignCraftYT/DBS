@@ -12,11 +12,21 @@ import java.util.List;
 
 public interface ISlashAndUserCommand extends IDiscordCommand {
 
+    /**
+     * @return The setup of the command
+     */
     @NotNull
     SlashAndUserCommandSetup getSetup();
 
+    /**
+     * The code that should be executed when the command is called
+     * @param event The command event
+     */
     void execute(@NotNull DBSSlashAndUserCommandInteractionEvent event);
 
+    /**
+     * @return All registered slash and user commands
+     */
     @NotNull
     static List<ISlashAndUserCommand> getSlashAndUserCommands() {
         List<ISlashAndUserCommand> returnList = new ArrayList<>();
@@ -24,6 +34,10 @@ public interface ISlashAndUserCommand extends IDiscordCommand {
         return returnList;
     }
 
+    /**
+     * @param name The name of the command
+     * @return The command with the given name or null if no command with the given name was found
+     */
     @Nullable
     static ISlashAndUserCommand getByName(@NotNull String name) {
         List<ISlashAndUserCommand> results = getSlashAndUserCommands().stream().filter(iSlashAndUserCommand -> iSlashAndUserCommand.getSetup().getName().equals(name)).toList();

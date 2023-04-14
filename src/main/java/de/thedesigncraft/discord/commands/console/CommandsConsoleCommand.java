@@ -3,6 +3,9 @@ package de.thedesigncraft.discord.commands.console;
 import de.thedesigncraft.discord.core.commands.console.IConsoleCommand;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Replies with all console commands
+ */
 public class CommandsConsoleCommand implements IConsoleCommand {
 
     @Override
@@ -19,7 +22,6 @@ public class CommandsConsoleCommand implements IConsoleCommand {
     public boolean needsLines() {
         return true;
     }
-
     @NotNull
     @Override
     public String execute() {

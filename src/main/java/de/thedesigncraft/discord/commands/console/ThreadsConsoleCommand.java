@@ -4,6 +4,9 @@ import de.thedesigncraft.discord.core.GlobalThreadPool;
 import de.thedesigncraft.discord.core.commands.console.IConsoleCommand;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Shows stats about the threadpool
+ */
 public class ThreadsConsoleCommand implements IConsoleCommand {
     @Override
     public @NotNull String getName() {

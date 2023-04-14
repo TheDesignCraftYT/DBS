@@ -7,6 +7,9 @@ import java.io.InputStreamReader;
 
 public class ConsoleCommandListener extends Thread {
 
+    /**
+     * Checks for console commands and executes them.
+     */
     public void run() {
         try {
 

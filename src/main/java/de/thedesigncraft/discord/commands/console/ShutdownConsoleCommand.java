@@ -4,6 +4,9 @@ import de.thedesigncraft.discord.core.DBS;
 import de.thedesigncraft.discord.core.commands.console.IConsoleCommand;
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * Shutdowns the bot
+ */
 public class ShutdownConsoleCommand implements IConsoleCommand {
     @Override
     public @NotNull String getName() {

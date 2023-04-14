@@ -22,6 +22,10 @@ public class DBS {
     public static String mainPackage = null;
     public static final String dbsPackage = "de.thedesigncraft";
 
+    /**
+     * Tries to start the bot
+     * @param setup The setup
+     */
     public DBS(@NotNull DBSSetup setup) {
         try {
             startup(setup);
@@ -30,6 +34,11 @@ public class DBS {
         }
     }
 
+    /**
+     * Tries to start the bot
+     * @param setup The setup
+     * @throws Exception If something goes wrong
+     */
     private static void startup(DBSSetup setup) throws Exception {
         if (!setup.isValid())
             throw new IllegalArgumentException("Setup is not valid!");
@@ -81,6 +90,10 @@ public class DBS {
         GlobalLogger.info(DBS.class, "Bot is online as " + jda.getSelfUser().getAsTag() + "!");
     }
 
+    /**
+     * Gets all event listeners
+     * @return The event listeners
+     */
     @NotNull
     private static Object @NotNull [] getEventListeners() {
         List<Object> returnList = new ArrayList<>();
@@ -96,10 +109,17 @@ public class DBS {
         return returnList.toArray();
     }
 
+    /**
+     * Gets the JDA instance
+     * @return The JDA instance
+     */
     public static JDA getJDA() {
         return jda;
     }
 
+    /**
+     * Shuts down the bot
+     */
     public static void shutdown() {
         if (DBS.jda != null) {
             GlobalLogger.info(DBS.class, "Shutting down...");

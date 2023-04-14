@@ -9,9 +9,15 @@ import java.util.List;
 
 public interface IDiscordCommand {
 
+    /**
+     * @return The setup of the command
+     */
     @NotNull
     DiscordCommandSetup getSetup();
 
+    /**
+     * @return All registered discord commands
+     */
     @NotNull
     static List<IDiscordCommand> getDiscordCommands() {
         List<IDiscordCommand> returnList = new ArrayList<>();
@@ -19,6 +25,9 @@ public interface IDiscordCommand {
         return returnList;
     }
 
+    /**
+     * All types of discord commands
+     */
     enum Type {
         SLASH,
         USER,

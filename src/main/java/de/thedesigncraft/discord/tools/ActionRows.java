@@ -12,11 +12,21 @@ import java.util.List;
 
 public interface ActionRows {
 
+    /**
+     * Creates a button that can be used to confirm an action.
+     * @param user The user that should be able to confirm the action.
+     * @return The button.
+     */
     @NotNull
     static Button cancelButton(User user) {
         return Button.of(ButtonStyle.SECONDARY, "cancel", "Cancel");
     }
 
+    /**
+     * Creates a {@link List} of {@link ActionRow}s from a {@link Collection} of {@link Button}s.
+     * @param buttons The buttons that should be added to the {@link List}.
+     * @return The {@link List} of {@link ActionRow}s.
+     */
     @NotNull
     static List<ActionRow> createFromButtons(@NotNull Collection<Button> buttons) {
         if (buttons.size() > 25)

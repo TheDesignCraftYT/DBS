@@ -12,11 +12,21 @@ import java.util.List;
 
 public interface IMessageContextMenu extends IDiscordCommand {
 
+    /**
+     * @return The setup of the command
+     */
     @NotNull
     MessageCommandSetup getSetup();
 
+    /**
+     * The code that should be executed when the command is called
+     * @param event The command event
+     */
     void execute(@NotNull DBSMessageCommandInteractionEvent event);
 
+    /**
+     * @return All registered message context menus
+     */
     @NotNull
     static List<IMessageContextMenu> getMessageContextMenus() {
         List<IMessageContextMenu> returnList = new ArrayList<>();
@@ -24,6 +34,10 @@ public interface IMessageContextMenu extends IDiscordCommand {
         return returnList;
     }
 
+    /**
+     * @param name The name of the command
+     * @return The command with the given name or null if no command with the given name was found
+     */
     @Nullable
     static IMessageContextMenu getByName(@NotNull String name) {
         List<IMessageContextMenu> results = getMessageContextMenus().stream().filter(iMessageContextMenu -> iMessageContextMenu.getSetup().getName().equals(name)).toList();

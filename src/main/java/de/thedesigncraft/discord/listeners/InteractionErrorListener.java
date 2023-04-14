@@ -103,6 +103,11 @@ public class InteractionErrorListener extends ListenerAdapter {
             event.replyEmbeds(embed).setEphemeral(true).queue();
     }
 
+    /**
+     * Checks if the event was acknowledged. If not, it will send a message to the bot developer.
+     * @param event The event to check.
+     * @return The {@link MessageEmbed} to send to the user or null if the event was acknowledged.
+     */
     @Nullable
     private static MessageEmbed checkEvent(@NotNull GenericInteractionCreateEvent event) {
         if (event.isAcknowledged())
